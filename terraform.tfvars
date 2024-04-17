@@ -1,0 +1,7 @@
+aws_region = "us-west-1"
+aws_access_key = ""
+aws_secret_key = ""
+vpc_cidr = "192.170.0.0/20"
+public_subnet_cidrs = "192.170.0.0/24"
+private_subnet_cidrs = "192.170.1.0/24"
+azs = "us-west-1a"
