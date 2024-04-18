@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region to use"
   type        = string
-  default     = ""
+  default     = "us-west-1"
 }
 
 variable "aws_access_key" {
@@ -23,26 +23,9 @@ variable "aws_session_token" {
 variable "vpc_cidr" {
   description = "The IPv4 CIDR block to use for the VPC"
   type        = string
-  default     = ""
+  default     = "192.170.0.0/20"
   validation {
     condition     = tonumber(split("/", var.vpc_cidr)[1]) <= 20 && tonumber(split("/", var.vpc_cidr)[1]) >= 16
     error_message = "CIDR size must be at least /20 and no larger than /16"
   }
-}
-
-variable "public_subnet_cidrs" {
- type        = string
- description = "Public Subnet CIDR values"
- default     = ""
-}
-
-variable "private_subnet_cidrs" {
- type        = string
- description = "Private Subnet CIDR values"
- default     = ""
-}
-variable "azs" {
- type        = string
- description = "Availability Zones"
- default     = ""
 }
