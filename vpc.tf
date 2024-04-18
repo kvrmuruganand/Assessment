@@ -114,6 +114,7 @@ resource "aws_subnet" "public_subnets" {
  cidr_block = cidrsubnet(var.vpc_cidr, 4, 2)
  availability_zone = data.aws_availability_zones.available.names[0]
  tags    = module.label_public_subnet.tags
+ map_public_ip_on_launch = true
 }
 
 module "label_private_subnet" {
